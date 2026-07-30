@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Newsxa</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%232563EB'/%3E%3Cpath d='M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .nf-wrap{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px}
+  .nf-num{font-family:"Fraunces",serif;font-size:clamp(64px,14vw,140px);font-weight:600;line-height:1;background:var(--grad-primary);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nf-wrap p{color:var(--ink-soft);font-size:15px;max-width:420px;margin:10px 0 26px}
+</style>
+</head>
+<body data-page="">
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="var(--primary)"/><path d="M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z" fill="white"/></svg>
+      <span><span class="brand-name">Newsxa</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a><a href="category.html?cat=world">World</a><a href="category.html?cat=technology">Technology</a>
+    </nav>
+    <div class="header-actions"><button class="icon-btn theme-toggle" aria-label="Toggle dark mode"></button></div>
+  </div>
+</header>
+<main>
+  <div class="nf-wrap">
+    <span class="nf-num">404</span>
+    <h1 style="font-family:'Fraunces',serif;font-size:24px;margin:0">This story doesn't exist</h1>
+    <p>The page you're looking for was moved, renamed, or never published. Head back to the homepage for the latest live headlines.</p>
+    <a class="load-more-btn ripple" href="index.html">Back to Newsxa</a>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© <span id="year"></span> Newsxa. All rights reserved.</span>
+      <a href="index.html" style="color:#c9cedb">Back to home →</a>
+    </div>
+  </div>
+</footer>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
