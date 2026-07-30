@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search — Newsxa</title>
+<meta name="description" content="Search live headlines across Newsxa's real-time news sources.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%232447F5'/%3E%3Cpath d='M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Newsxa home">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="var(--primary)"/><path d="M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z" fill="white"/></svg>
+      <span><span class="brand-name">Newsxa</span><span class="brand-tagline font-mono">LATEST NEWS. FASTER. SMARTER.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="category.html?cat=mycountry">My Country</a>
+      <a href="category.html?cat=world">World</a>
+      <a href="category.html?cat=technology">Technology</a>
+      <a href="category.html?cat=business">Business</a>
+      <a href="category.html?cat=sports">Sports</a>
+      <a href="category.html?cat=entertainment">Entertainment</a>
+      <a href="category.html?cat=health">Health</a>
+      <a href="category.html?cat=science">Science</a>
+      <a href="category.html?cat=trending">Trending</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="search-input" id="mainSearch" type="search" placeholder="Search news…" aria-label="Search news">
+      </div>
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"></button>
+      <button class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home <span>→</span></a>
+    <a href="category.html?cat=world">World <span>→</span></a>
+    <a href="category.html?cat=technology">Technology <span>→</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Search</span>
+      <h1 class="page-title">Results for "<span id="qText"></span>"</h1>
+      <p class="page-sub" id="resultCount">Searching live headlines…</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid" id="searchGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© <span id="year"></span> Newsxa. All rights reserved.</span>
+      <a href="index.html" style="color:#c9cedb">Back to home →</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/search.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
