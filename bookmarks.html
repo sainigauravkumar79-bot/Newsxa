@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookmarks — Newsxa</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%232447F5'/%3E%3Cpath d='M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="">
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Newsxa home">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="19" fill="var(--primary)"/><path d="M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z" fill="white"/></svg>
+      <span><span class="brand-name">Newsxa</span><span class="brand-tagline font-mono">LATEST NEWS. FASTER. SMARTER.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="category.html?cat=world">World</a>
+      <a href="category.html?cat=technology">Technology</a>
+      <a href="category.html?cat=business">Business</a>
+      <a href="category.html?cat=sports">Sports</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"></button>
+      <button class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home <span>→</span></a>
+    <a href="category.html?cat=world">World <span>→</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Saved for later</span>
+      <h1 class="page-title">Your Bookmarks</h1>
+      <p class="page-sub">Saved locally on this device — tap the bookmark icon on any story to add or remove it.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid" id="bookmarkGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0">
+      <span>© <span id="year"></span> Newsxa. All rights reserved.</span>
+      <a href="index.html" style="color:#c9cedb">Back to home →</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/cards.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("bookmarkGrid");
+  const items = Newsxa.getBookmarks();
+  const index = new Map(items.map((a) => [a.id, a]));
+  if (!items.length) {
+    grid.appendChild(NewsxaCards.emptyState("Nothing saved yet — bookmark a story from any section to see it here."));
+  } else {
+    grid.innerHTML = items.map(NewsxaCards.cardHTML).join("");
+    NewsxaCards.bindCardActions(grid, (id) => index.get(id));
+    grid.addEventListener("click", (e) => {
+      const btn = e.target.closest('[data-action="bookmark"]');
+      if (btn) setTimeout(() => location.reload(), 350);
+    });
+  }
+  document.getElementById("year").textContent = new Date().getFullYear();
+});
+</script>
+</body>
+</html>
