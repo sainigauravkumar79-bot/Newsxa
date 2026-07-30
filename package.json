@@ -1,0 +1,23 @@
+{
+  "name": "newsxa",
+  "version": "1.0.0",
+  "description": "Newsxa — real-time news aggregator. Premium, responsive, dark-mode-ready static site pulling live headlines from BBC News, The New York Times, and Google News.",
+  "private": true,
+  "license": "MIT",
+  "author": "Newsxa",
+  "homepage": "https://www.newsxa.com",
+  "keywords": ["news", "aggregator", "rss", "static-site", "vanilla-js"],
+  "scripts": {
+    "dev": "npx serve . -l 5173",
+    "start": "npx serve . -l 5173",
+    "test": "node tests/smoke.js",
+    "lint:js": "node -e \"require('fs').readdirSync('js').forEach(f => require('child_process').execSync('node --check js/' + f))\" ",
+    "prepare-deploy": "npm run test"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
