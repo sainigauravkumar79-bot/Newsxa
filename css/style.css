@@ -1,0 +1,395 @@
+/* ==========================================================================
+   NEWSXA — Design tokens (Premium palette + category color system)
+   Display: Fraunces | Body/UI: Inter | Eyebrow/Meta/Mono: JetBrains Mono
+   ========================================================================== */
+:root{
+  --bg:#F8FAFC;
+  --bg-soft:#F1F5F9;
+  --bg-soft-2:#E9EEF5;
+  --surface:#FFFFFF;
+  --ink:#111827;
+  --ink-soft:#6B7280;
+  --ink-faint:#9AA3B2;
+  --line:#E5E7EB;
+  --line-strong:#D8DEE8;
+
+  --primary:#2563EB;
+  --primary-dark:#1D4ED8;
+  --primary-soft:#EAF1FF;
+  --cyan:#06B6D4;
+  --red-live:#EF4444;
+  --green:#22C55E;
+  --amber:#EAB308;
+  --amber-soft:#FEF9E7;
+
+  --grad-primary:linear-gradient(135deg,#2563EB 0%,#06B6D4 100%);
+  --grad-live:linear-gradient(135deg,#EF4444 0%,#F97316 100%);
+
+  --radius-lg:24px;
+  --radius-md:20px;
+  --radius-sm:12px;
+
+  --shadow-sm:0 1px 2px rgba(17,24,39,.05), 0 1px 1px rgba(17,24,39,.04);
+  --shadow-md:0 10px 28px -10px rgba(17,24,39,.16), 0 2px 8px rgba(17,24,39,.06);
+  --shadow-lg:0 26px 54px -18px rgba(17,24,39,.24), 0 6px 16px rgba(17,24,39,.07);
+  --shadow-inset:inset 0 0 0 1px rgba(17,24,39,.05);
+  --glow-primary:0 0 0 1px rgba(37,99,235,.18), 0 14px 32px -10px rgba(37,99,235,.35);
+
+  --ease:cubic-bezier(.22,1,.36,1);
+  --dur-1:.18s;
+  --dur-2:.32s;
+  --dur-3:.6s;
+
+  --header-h:76px;
+  --maxw:1280px;
+}
+
+html.dark{
+  --bg:#0A0D13;
+  --bg-soft:#11141C;
+  --bg-soft-2:#161A24;
+  --surface:#12151E;
+  --ink:#EEF1F7;
+  --ink-soft:#A4ADC0;
+  --ink-faint:#6B7387;
+  --line:#232837;
+  --line-strong:#2D3346;
+
+  --primary:#5B8CFF;
+  --primary-dark:#8FB0FF;
+  --primary-soft:#16223F;
+  --cyan:#22D3EE;
+  --amber:#FFD166;
+  --amber-soft:#2C2007;
+
+  --grad-primary:linear-gradient(135deg,#3B6DFF 0%,#22D3EE 100%);
+  --grad-live:linear-gradient(135deg,#EF4444 0%,#F97316 100%);
+
+  --shadow-sm:0 1px 2px rgba(0,0,0,.5);
+  --shadow-md:0 10px 28px -10px rgba(0,0,0,.6), 0 2px 8px rgba(0,0,0,.35);
+  --shadow-lg:0 26px 60px -18px rgba(0,0,0,.7), 0 6px 16px rgba(0,0,0,.3);
+  --glow-primary:0 0 0 1px rgba(91,140,255,.28), 0 14px 36px -10px rgba(91,140,255,.5);
+}
+
+/* ---- Category color system ------------------------------------------- */
+.cat-top{--cat:#EF4444; --cat-2:#F97316; --cat-grad:linear-gradient(135deg,#EF4444,#F97316)}
+.cat-mycountry{--cat:#14B8A6; --cat-2:#0D9488; --cat-grad:linear-gradient(135deg,#14B8A6,#0D9488)}
+.cat-world{--cat:#F97316; --cat-2:#EA580C; --cat-grad:linear-gradient(135deg,#F97316,#EA580C)}
+.cat-technology{--cat:#2563EB; --cat-2:#1D4ED8; --cat-grad:linear-gradient(135deg,#2563EB,#06B6D4)}
+.cat-business{--cat:#8B5CF6; --cat-2:#7C3AED; --cat-grad:linear-gradient(135deg,#8B5CF6,#7C3AED)}
+.cat-sports{--cat:#22C55E; --cat-2:#16A34A; --cat-grad:linear-gradient(135deg,#22C55E,#16A34A)}
+.cat-entertainment{--cat:#EC4899; --cat-2:#DB2777; --cat-grad:linear-gradient(135deg,#EC4899,#DB2777)}
+.cat-health{--cat:#10B981; --cat-2:#059669; --cat-grad:linear-gradient(135deg,#10B981,#059669)}
+.cat-science{--cat:#6366F1; --cat-2:#4F46E5; --cat-grad:linear-gradient(135deg,#6366F1,#4F46E5)}
+.cat-trending{--cat:#EAB308; --cat-2:#CA8A04; --cat-grad:linear-gradient(135deg,#EAB308,#CA8A04)}
+
+#sec-top .eyebrow{color:#EF4444}
+#sec-mycountry .eyebrow{color:#14B8A6}
+#sec-world .eyebrow{color:#F97316}
+#sec-technology .eyebrow{color:#2563EB}
+#sec-business .eyebrow{color:#8B5CF6}
+#sec-sports .eyebrow{color:#22C55E}
+#sec-entertainment .eyebrow{color:#EC4899}
+#sec-health .eyebrow{color:#10B981}
+#sec-science .eyebrow{color:#6366F1}
+#sec-trending .eyebrow{color:#EAB308}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  transition:background-color var(--dur-2) var(--ease),color var(--dur-2) var(--ease), opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+  opacity:1; transform:translateY(0);
+}
+body.page-enter{animation:pageFadeIn .5s var(--ease) both}
+body.page-exit{opacity:0; transform:translateY(8px)}
+@keyframes pageFadeIn{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:translateY(0)}}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:6px}
+
+.font-display{font-family:"Fraunces",Georgia,serif}
+.font-mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+@media (max-width:640px){.container{padding:0 18px}}
+
+.eyebrow{
+  font-family:"JetBrains Mono",monospace;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--primary);
+  font-weight:600;
+}
+
+/* ==========================================================================
+   HEADER — glassmorphism sticky nav
+   ========================================================================== */
+.site-header{
+  position:sticky; top:0; z-index:200;
+  height:var(--header-h);
+  display:flex; align-items:center;
+  background:color-mix(in srgb, var(--bg) 62%, transparent);
+  backdrop-filter:blur(24px) saturate(1.8);
+  -webkit-backdrop-filter:blur(24px) saturate(1.8);
+  border-bottom:1px solid color-mix(in srgb, var(--line) 80%, transparent);
+  transition:background var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease);
+}
+.site-header::after{
+  content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px;
+  background:linear-gradient(90deg, transparent, var(--primary), var(--cyan), transparent);
+  opacity:0; transition:opacity var(--dur-2) var(--ease);
+}
+.site-header.is-scrolled::after{opacity:.7}
+.site-header.is-scrolled{box-shadow:var(--shadow-md); border-bottom-color:var(--line-strong)}
+.header-inner{display:flex; align-items:center; gap:20px; width:100%}
+
+.brand{display:flex; align-items:center; gap:10px; flex-shrink:0}
+.brand-mark{width:38px;height:38px;display:block; filter:drop-shadow(0 4px 10px rgba(37,99,235,.35))}
+.brand-name{font-family:"Fraunces",serif; font-weight:600; font-size:22px; letter-spacing:-.01em; background:var(--grad-primary); -webkit-background-clip:text; background-clip:text; color:transparent}
+.brand-tagline{display:none; font-family:"JetBrains Mono",monospace; font-size:10px; color:var(--ink-faint); letter-spacing:.04em}
+@media (min-width:960px){.brand-tagline{display:block}}
+
+.main-nav{display:none; align-items:center; gap:2px; margin-left:8px}
+@media (min-width:1120px){.main-nav{display:flex}}
+.main-nav a{
+  position:relative;
+  padding:9px 12px; font-size:13.5px; font-weight:500; color:var(--ink-soft);
+  border-radius:10px; white-space:nowrap;
+  transition:color var(--dur-1) var(--ease), background var(--dur-1) var(--ease), transform var(--dur-1) var(--ease);
+}
+.main-nav a:hover{color:var(--ink); background:var(--bg-soft); transform:translateY(-1px)}
+.main-nav a.active{color:var(--primary); background:var(--primary-soft); box-shadow:var(--shadow-inset)}
+
+.header-actions{display:flex; align-items:center; gap:8px; margin-left:auto}
+
+/* Floating search bar */
+.search-wrap{position:relative; display:none}
+@media (min-width:760px){.search-wrap{display:block}}
+.search-input{
+  width:190px; padding:10px 14px 10px 36px; font-size:13.5px;
+  background:var(--surface); border:1px solid var(--line); border-radius:999px;
+  color:var(--ink); box-shadow:var(--shadow-sm);
+  transition:width var(--dur-2) var(--ease), border-color var(--dur-1), box-shadow var(--dur-2) var(--ease);
+}
+.search-input:focus{width:270px; border-color:var(--primary); box-shadow:var(--glow-primary)}
+.search-icon{position:absolute; left:12px; top:50%; transform:translateY(-50%); width:15px; height:15px; color:var(--ink-faint); pointer-events:none}
+
+.icon-btn{
+  position:relative; overflow:hidden;
+  width:38px;height:38px; display:flex; align-items:center; justify-content:center;
+  border-radius:999px; border:1px solid transparent; background:transparent; color:var(--ink-soft);
+  cursor:pointer; transition:background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), transform var(--dur-1) var(--ease), border-color var(--dur-1), box-shadow var(--dur-1) var(--ease);
+}
+.icon-btn:hover{background:var(--surface); color:var(--primary); border-color:var(--line); box-shadow:var(--shadow-sm), 0 0 14px rgba(37,99,235,.18); transform:translateY(-1px)}
+.icon-btn:active{transform:scale(.92)}
+.icon-btn svg{width:19px;height:19px}
+
+/* Modern country selector */
+.country-select{
+  appearance:none; -webkit-appearance:none;
+  background:var(--surface) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236B7280' stroke-width='1.4' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;
+  border:1px solid var(--line); border-radius:999px; padding:9px 30px 9px 14px;
+  font-size:13px; font-weight:600; color:var(--ink-soft); cursor:pointer; display:none;
+  box-shadow:var(--shadow-sm); transition:box-shadow var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease);
+}
+.country-select:hover{border-color:var(--primary); box-shadow:var(--glow-primary)}
+@media (min-width:760px){.country-select{display:inline-block}}
+
+.menu-btn{display:flex}
+@media (min-width:1120px){.menu-btn{display:none}}
+
+/* mobile menu */
+.mobile-menu{
+  position:fixed; inset:var(--header-h) 0 0 0; z-index:190;
+  background:color-mix(in srgb, var(--bg) 96%, transparent); backdrop-filter:blur(16px);
+  overflow-y:auto;
+  transform:translateY(-8px); opacity:0; pointer-events:none;
+  transition:opacity var(--dur-2) var(--ease), transform var(--dur-2) var(--ease);
+  padding:20px 20px 40px;
+}
+.mobile-menu.open{opacity:1; transform:translateY(0); pointer-events:auto}
+.mobile-menu a{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:15px 4px; font-size:16.5px; font-weight:500; border-bottom:1px solid var(--line); color:var(--ink);
+  transition:color var(--dur-1) var(--ease), padding-left var(--dur-1) var(--ease);
+}
+.mobile-menu a:hover{color:var(--primary); padding-left:8px}
+.mobile-menu a.active{color:var(--primary)}
+.mobile-search{margin-bottom:18px}
+.mobile-search .search-input{width:100%}
+.mobile-search .search-input:focus{width:100%}
+.mobile-only-controls{display:flex; gap:10px; margin-top:22px}
+
+@media (min-width:1120px){.mobile-menu{display:none}}
+
+/* ==========================================================================
+   LIVE TICKER
+   ========================================================================== */
+.ticker{
+  background:var(--ink); color:#fff; overflow:hidden; position:relative;
+  border-bottom:1px solid var(--line);
+}
+html.dark .ticker{background:var(--bg-soft-2)}
+.ticker-inner{display:flex; align-items:center; gap:14px; padding:9px 0}
+.ticker-label{
+  flex-shrink:0; display:flex; align-items:center; gap:6px; margin-left:24px;
+  font-family:"JetBrains Mono",monospace; font-size:11px; font-weight:700; letter-spacing:.08em;
+  color:#fff; text-transform:uppercase;
+}
+.live-dot{width:7px;height:7px;border-radius:50%;background:var(--red-live); animation:pulse-dot 1.6s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(239,68,68,.5)}50%{opacity:.55}}
+.ticker-track{display:flex; gap:48px; white-space:nowrap; animation:ticker-scroll 40s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font-size:13px; color:#dfe3ea}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ==========================================================================
+   HERO — large, full-width breaking-news banner. Headline density comes
+   from the "Top Headlines" section immediately below (8 real cards), not
+   from cramming secondary items into the hero itself.
+   ========================================================================== */
+.hero{padding:32px 0 8px}
+.hero-card{
+  position:relative; border-radius:24px; overflow:hidden; width:100%;
+  min-height:520px; display:flex; align-items:flex-end;
+  box-shadow:var(--shadow-lg), 0 0 0 1px color-mix(in srgb, var(--ink) 4%, transparent);
+  background:var(--bg-soft-2);
+  isolation:isolate;
+}
+@media (max-width:640px){.hero-card{min-height:380px}}
+.hero-card img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;
+  transform:scale(1.03); transition:transform 1.4s var(--ease), opacity .6s var(--ease);
+  opacity:0;
+}
+.hero-card img.loaded{opacity:1}
+.hero-card:hover img{transform:scale(1.06)}
+.hero-scrim{
+  position:absolute; inset:0; z-index:1;
+  background:linear-gradient(180deg, rgba(17,24,39,0) 22%, rgba(17,24,39,.48) 58%, rgba(17,24,39,.94) 100%);
+}
+.hero-content{position:relative; z-index:2; padding:40px; color:#fff; max-width:760px}
+.hero-badges{display:flex; gap:8px; align-items:center; margin-bottom:16px; flex-wrap:wrap}
+.badge{
+  display:inline-flex; align-items:center; gap:5px; padding:6px 13px; border-radius:999px;
+  font-family:"JetBrains Mono",monospace; font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+}
+.badge-live{background:var(--grad-live); color:#fff; box-shadow:0 4px 16px rgba(239,68,68,.45)}
+.badge-cat{background:var(--cat-grad, rgba(255,255,255,.16)); color:#fff; backdrop-filter:blur(6px)}
+.hero-headline{
+  font-family:"Fraunces",serif; font-weight:600; font-size:clamp(28px,4.6vw,48px);
+  line-height:1.08; letter-spacing:-.015em; margin:0 0 14px;
+  animation:fadeSlideUp .7s var(--ease) both;
+  text-wrap:balance;
+}
+@keyframes fadeSlideUp{from{opacity:0; transform:translateY(16px)}to{opacity:1; transform:translateY(0)}}
+.hero-meta{display:flex; gap:14px; align-items:center; font-size:13.5px; color:rgba(255,255,255,.85); flex-wrap:wrap; font-weight:500}
+.hero-meta .dot{width:3px;height:3px;border-radius:50%;background:currentColor}
+.hero-read{
+  display:inline-block; margin-top:20px; padding:13px 24px;
+  background:#fff; color:var(--ink); border-radius:999px; font-weight:700; font-size:14px;
+  transition:transform var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
+}
+.hero-read:hover{transform:translateY(-2px); box-shadow:0 14px 30px rgba(0,0,0,.28)}
+.hero-skel{width:100%; height:520px; border-radius:24px}
+@media (max-width:640px){.hero-skel{height:380px}}
+
+/* ==========================================================================
+   SECTIONS — magazine-style kicker bar next to each title
+   ========================================================================== */
+.section{padding:52px 0}
+.section.alt{background:var(--bg-soft)}
+.section-head{display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:24px; gap:16px}
+.section-title-wrap{display:flex; flex-direction:row; align-items:center; gap:12px}
+.section-title-wrap::before{
+  content:""; width:5px; height:32px; border-radius:4px;
+  background:var(--cat-grad, var(--grad-primary)); flex-shrink:0;
+}
+.section-title-wrap > div{display:flex; flex-direction:column; gap:4px}
+.section-title{font-family:"Fraunces",serif; font-size:clamp(24px,3vw,34px); font-weight:600; margin:0; letter-spacing:-.015em}
+.view-all{
+  display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:600; color:var(--primary);
+  padding:9px 16px; border:1px solid var(--line-strong); border-radius:999px; flex-shrink:0;
+  background:var(--surface); position:relative; overflow:hidden;
+  transition:background var(--dur-1) var(--ease), border-color var(--dur-1), transform var(--dur-1), box-shadow var(--dur-1) var(--ease);
+}
+.view-all:hover{background:var(--primary-soft); border-color:var(--primary); transform:translateX(2px) translateY(-1px); box-shadow:var(--glow-primary)}
+.view-all svg{width:14px;height:14px}
+
+/* ==========================================================================
+   CAROUSEL — horizontal slider used for Top Headlines / Trending / My Country
+   ========================================================================== */
+.carousel{position:relative}
+.carousel-viewport{
+  overflow-x:auto; overflow-y:hidden; scroll-snap-type:x proximity; scroll-behavior:smooth;
+  display:flex; gap:20px; padding:6px 4px 22px; margin:-6px -4px -16px;
+  -ms-overflow-style:none; scrollbar-width:none;
+}
+.carousel-viewport::-webkit-scrollbar{display:none}
+.carousel-viewport .card{flex:0 0 300px; scroll-snap-align:start}
+@media (max-width:640px){.carousel-viewport .card{flex-basis:78vw}}
+.carousel-arrow{
+  position:absolute; top:38%; transform:translateY(-50%); z-index:5; width:34px; height:34px; border-radius:50%;
+  background:color-mix(in srgb, var(--surface) 90%, transparent); backdrop-filter:blur(10px);
+  border:1px solid var(--line-strong); box-shadow:var(--shadow-sm);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink-soft);
+  opacity:0; pointer-events:none;
+  transition:transform var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease), opacity var(--dur-1) var(--ease), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease);
+}
+.carousel:hover .carousel-arrow,
+.carousel:focus-within .carousel-arrow{opacity:1; pointer-events:auto}
+.carousel-arrow:hover{background:var(--grad-primary); color:#fff; border-color:transparent; box-shadow:var(--glow-primary); transform:translateY(-50%) scale(1.08)}
+.carousel-arrow.prev{left:2px}
+.carousel-arrow.next{right:2px}
+.carousel-arrow svg{width:14px;height:14px}
+.carousel-arrow[disabled]{opacity:0 !important; pointer-events:none}
+@media (max-width:900px){.carousel-arrow{display:none}}
+
+/* ==========================================================================
+   CARD GRID + CARDS — floating, 3D, glowing hover
+   ========================================================================== */
+.grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:540px){.grid{grid-template-columns:1fr}}
+
+.card{
+  position:relative; background:var(--surface); border-radius:var(--radius-md);
+  overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--line);
+  display:flex; flex-direction:column;
+  transition:transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), border-color var(--dur-2);
+  animation:card-in .5s var(--ease) both;
+}
+.card::before{
+  content:""; position:absolute; inset:0 0 auto 0; height:3px; background:var(--cat-grad, var(--grad-primary));
+  opacity:0; transition:opacity var(--dur-2) var(--ease); z-index:3;
+}
+@keyframes card-in{from{opacity:0; transform:translateY(14px)}to{opacity:1; transform:translateY(0)}}
+.card:hover{
+  transform:translateY(-8px) scale(1.01);
+  box-shadow:var(--shadow-lg), 0 0 32px -8px color-mix(in srgb, var(--cat, var(--primary)) 45%, transparent);
+  border-color:var(--line-strong);
+}
+.card:hover::before{opacity:1}
+.card-media{position:relative; aspect-ratio:16/11; background:var(--bg-soft-2); overflow:hidden}
+.card-media img{width:100%; height:100%; object-fit:cover; opacity:0; transition:transform var(--dur-3) var(--ease), opacity .5s var(--ease)}
+.card-media img.loaded{opacity:1}
+.card:hover .card-media img{transform:scale(1.08)}
+.card-cat{
+  position:absolute; top:10px; left:10px; z-index:2;
+  display:inline-flex; align-items:center; gap:5px;
+  padding:5px 11px; border-radius:999px; font-size:10px; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+  background:var(--cat-grad, rgba(10,13,20,.62)); color:#fff; backdrop-filter:blur(4px); font-family:"JetBrains Mono",monospace;
+  box-shadow:0 4px 12px -2px color-mix(in srgb, var(--cat, #111827) 55%, tran
