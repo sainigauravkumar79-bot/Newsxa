@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsxa — Latest News. Faster. Smarter.</title>
+<meta name="description" content="Newsxa is a real-time news aggregator bringing you live headlines from BBC, The New York Times, Google News and more — World, Technology, Business, Sports, Entertainment, Health and Science, updated every few minutes.">
+<link rel="canonical" href="https://www.newsxa.com/">
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="Newsxa">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Newsxa — Latest News. Faster. Smarter.">
+<meta property="og:description" content="Real-time headlines from trusted global sources — World, Technology, Business, Sports, Entertainment, Health and Science.">
+<meta property="og:url" content="https://www.newsxa.com/">
+<meta property="og:image" content="https://www.newsxa.com/assets/og-cover.jpg">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Newsxa — Latest News. Faster. Smarter.">
+<meta name="twitter:description" content="Real-time headlines from trusted global sources, updated every few minutes.">
+<meta name="twitter:image" content="https://www.newsxa.com/assets/og-cover.jpg">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%232447F5'/%3E%3Cpath d='M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z' fill='white'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "Newsxa",
+  "url": "https://www.newsxa.com/",
+  "logo": "https://www.newsxa.com/assets/logo.png",
+  "description": "Real-time news aggregator surfacing live headlines from trusted global RSS sources.",
+  "sameAs": [
+    "https://twitter.com/newsxa",
+    "https://facebook.com/newsxa",
+    "https://instagram.com/newsxa"
+  ]
+}
+</script>
+</head>
+<body data-page="home">
+
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Newsxa home">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="19" fill="var(--primary)"/>
+        <path d="M20 1a19 19 0 0 1 0 38M20 1a19 19 0 0 0 0 38M1 20h38M3.5 12.5h33M3.5 27.5h33" stroke="white" stroke-opacity=".28" stroke-width="1"/>
+        <path d="M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z" fill="white"/>
+      </svg>
+      <span>
+        <span class="brand-name">Newsxa</span>
+        <span class="brand-tagline font-mono">LATEST NEWS. FASTER. SMARTER.</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="category.html?cat=mycountry" data-nav="mycountry">My Country</a>
+      <a href="category.html?cat=world" data-nav="world">World</a>
+      <a href="category.html?cat=technology" data-nav="technology">Technology</a>
+      <a href="category.html?cat=business" data-nav="business">Business</a>
+      <a href="category.html?cat=sports" data-nav="sports">Sports</a>
+      <a href="category.html?cat=entertainment" data-nav="entertainment">Entertainment</a>
+      <a href="category.html?cat=health" data-nav="health">Health</a>
+      <a href="category.html?cat=science" data-nav="science">Science</a>
+      <a href="category.html?cat=trending" data-nav="trending">Trending</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="search-input" type="search" placeholder="Search news…" aria-label="Search news">
+      </div>
+      <select class="country-select" aria-label="Select country edition"></select>
+      <button class="icon-btn theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"></button>
+      <a class="icon-btn" href="bookmarks.html" aria-label="Bookmarked articles">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21 12 16 5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+      </a>
+      <button class="icon-btn" aria-label="Profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.6-4 5-6 8-6s6.4 2 8 6"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-search">
+      <div class="search-wrap" style="display:block">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input class="search-input" type="search" placeholder="Search news…" aria-label="Search news">
+      </div>
+    </div>
+    <a href="index.html" data-nav="home">Home <span>→</span></a>
+    <a href="category.html?cat=mycountry" data-nav="mycountry">My Country <span>→</span></a>
+    <a href="category.html?cat=world" data-nav="world">World <span>→</span></a>
+    <a href="category.html?cat=technology" data-nav="technology">Technology <span>→</span></a>
+    <a href="category.html?cat=business" data-nav="business">Business <span>→</span></a>
+    <a href="category.html?cat=sports" data-nav="sports">Sports <span>→</span></a>
+    <a href="category.html?cat=entertainment" data-nav="entertainment">Entertainment <span>→</span></a>
+    <a href="category.html?cat=health" data-nav="health">Health <span>→</span></a>
+    <a href="category.html?cat=science" data-nav="science">Science <span>→</span></a>
+    <a href="category.html?cat=trending" data-nav="trending">Trending <span>→</span></a>
+    <div class="mobile-only-controls">
+      <select class="country-select" aria-label="Select country edition"></select>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-label="Breaking news ticker">
+  <div class="ticker-inner">
+    <span class="ticker-label"><span class="live-dot"></span>LIVE</span>
+    <div class="ticker-track" id="tickerTrack">
+      <span>Loading live headlines…</span>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero container">
+    <div id="heroSlot"><div class="hero-skel skel"></div></div>
+  </section>
+
+  <!-- TOP HEADLINES -->
+  <section class="section" id="sec-top">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-top">
+          <div>
+            <span class="eyebrow">Curated · Updated live</span>
+            <h2 class="section-title">Top Headlines</h2>
+          </div>
+        </div>
+        <a class="view-all" href="category.html?cat=top">View all →</a>
+      </div>
+      <div class="carousel" id="carousel-top">
+        <button class="carousel-arrow prev" aria-label="Scroll left" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="carousel-viewport" id="list-top"></div>
+        <button class="carousel-arrow next" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MY COUNTRY -->
+  <section class="section alt" id="sec-mycountry">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-mycountry">
+          <div>
+            <span class="eyebrow">Local edition</span>
+            <h2 class="section-title">My Country</h2>
+          </div>
+        </div>
+        <a class="view-all" href="category.html?cat=mycountry">View all →</a>
+      </div>
+      <div class="carousel" id="carousel-mycountry">
+        <button class="carousel-arrow prev" aria-label="Scroll left" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="carousel-viewport" id="grid-mycountry"></div>
+        <button class="carousel-arrow next" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORLD -->
+  <section class="section" id="sec-world">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-world"><div><span class="eyebrow">Global</span><h2 class="section-title">World</h2></div></div>
+        <a class="view-all" href="category.html?cat=world">View all →</a>
+      </div>
+      <div class="grid" id="grid-world"></div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="section alt" id="sec-technology">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-technology"><div><span class="eyebrow">Innovation</span><h2 class="section-title">Technology</h2></div></div>
+        <a class="view-all" href="category.html?cat=technology">View all →</a>
+      </div>
+      <div class="grid" id="grid-technology"></div>
+    </div>
+  </section>
+
+  <!-- BUSINESS -->
+  <section class="section" id="sec-business">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-business"><div><span class="eyebrow">Markets</span><h2 class="section-title">Business</h2></div></div>
+        <a class="view-all" href="category.html?cat=business">View all →</a>
+      </div>
+      <div class="grid" id="grid-business"></div>
+    </div>
+  </section>
+
+  <!-- SPORTS -->
+  <section class="section alt" id="sec-sports">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-sports"><div><span class="eyebrow">Play by play</span><h2 class="section-title">Sports</h2></div></div>
+        <a class="view-all" href="category.html?cat=sports">View all →</a>
+      </div>
+      <div class="grid" id="grid-sports"></div>
+    </div>
+  </section>
+
+  <!-- ENTERTAINMENT -->
+  <section class="section" id="sec-entertainment">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-entertainment"><div><span class="eyebrow">Culture</span><h2 class="section-title">Entertainment</h2></div></div>
+        <a class="view-all" href="category.html?cat=entertainment">View all →</a>
+      </div>
+      <div class="grid" id="grid-entertainment"></div>
+    </div>
+  </section>
+
+  <!-- HEALTH -->
+  <section class="section alt" id="sec-health">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-health"><div><span class="eyebrow">Wellbeing</span><h2 class="section-title">Health</h2></div></div>
+        <a class="view-all" href="category.html?cat=health">View all →</a>
+      </div>
+      <div class="grid" id="grid-health"></div>
+    </div>
+  </section>
+
+  <!-- SCIENCE -->
+  <section class="section" id="sec-science">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-science"><div><span class="eyebrow">Discovery</span><h2 class="section-title">Science</h2></div></div>
+        <a class="view-all" href="category.html?cat=science">View all →</a>
+      </div>
+      <div class="grid" id="grid-science"></div>
+    </div>
+  </section>
+
+  <!-- TRENDING -->
+  <section class="section alt" id="sec-trending">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap cat-trending"><div><span class="eyebrow">Right now</span><h2 class="section-title">Trending</h2></div></div>
+        <a class="view-all" href="category.html?cat=trending">View all →</a>
+      </div>
+      <div class="carousel" id="carousel-trending">
+        <button class="carousel-arrow prev" aria-label="Scroll left" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="carousel-viewport" id="grid-trending"></div>
+        <button class="carousel-arrow next" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <svg class="brand-mark" viewBox="0 0 40 40" fill="none" width="32" height="32">
+            <circle cx="20" cy="20" r="19" fill="#2447F5"/>
+            <path d="M13 28V12h3.4l8.6 11V12h3v16h-3.2L16 17v11z" fill="white"/>
+          </svg>
+          <span class="brand-name">Newsxa</span>
+        </div>
+        <p class="footer-about">Newsxa aggregates real-time headlines from trusted global newsrooms so you can catch up in minutes, not hours.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.2 4.2 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.9A8.3 8.3 0 0 1 2 18.4a11.6 11.6 0 0 0 6.3 1.9c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.2Z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.9.2-1.5 1.5-1.5H16.5V4.2C16.2 4.2 15.2 4 14 4c-2.4 0-4 1.5-4 4.2v2.3H7.5v3H10V21Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM3 8.98h4v11.5H3zM9.5 8.98H13v1.6h.06c.5-.9 1.7-1.85 3.5-1.85 3.75 0 4.44 2.47 4.44 5.68v6.07H17v-5.38c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.87v5.47H9.5Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="category.html?cat=trending">Trending</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h5>Sources</h5>
+        <a href="sources.html">RSS Sources</a>
+        <a href="https://www.bbc.co.uk/news" target="_blank" rel="noopener">BBC News</a>
+        <a href="https://www.nytimes.com" target="_blank" rel="noopener">The New York Times</a>
+      </div>
+      <div class="footer-col">
+        <h5>Explore</h5>
+        <a href="category.html?cat=technology">Technology</a>
+        <a href="category.html?cat=business">Business</a>
+        <a href="bookmarks.html">Bookmarks</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Newsxa. All rights reserved.</span>
+      <span>Built with real, live RSS &amp; API sources.</span>
+    </div>
+    <p class="footer-disclaimer">Disclaimer: Newsxa is an independent news aggregator. Headlines, images, and excerpts are pulled live from third-party RSS/API feeds and link back to the original publisher. Newsxa does not author, edit, or claim ownership of the linked articles; all trademarks and copyrights belong to their respective owners.</p>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/app.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+          </html>
