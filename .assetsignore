@@ -1,0 +1,17 @@
+# Cloudflare Workers Static Assets — files/folders listed here are never
+# uploaded as part of the deployed site, even though they live in this repo.
+node_modules/
+.git/
+.wrangler/
+.github/
+
+tests/
+package.json
+package-lock.json
+bun.lock
+yarn.lock
+.gitignore
+
+README.md
+LICENSE
+netlify.toml
